@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	알림팝업창입니다.
+	<br><br><br><br><br>
+	<form>
+		<input type="checkbox" onclick="setPopUpStart(this)">
+		오늘 하루 창 열지 않기
+	</form>
+
+	<script>
+		function setPopUpStart(obj){
+			if (obj.checked==true) {
+				let expireDate = new Date();
+				let days = 1;
+				expireDate.setDate(expireDate.getDate()+days);
+				document.cookie = "notShowPop=true; path=/; expires="+expireDate.toGMTString();
+				window.close() 
+			}
+		}
+	</script>
+
+</body>
+</html>

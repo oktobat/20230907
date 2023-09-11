@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+		let result = fasle;
+		if (document.cookie != "") {
+			let cookie = document.cookie.split(';');
+			for (let i=0; i<cookie.length; i++){
+				let element = cookie[i].split('=')
+				let value = element[0]
+				if (value=='notShowPop'){
+					
+				}
+			}	
+		}
+		
+		
+		window.open("popUp.html", "창제목", "width=300, height=300, top=200, left=300")
+		
+	}
+</script>
+</head>
+<body>
+	<form>
+		<input type="button" value="쿠키삭제" onclick="deleteCookie()">
+	</form>
+</body>
+</html>
