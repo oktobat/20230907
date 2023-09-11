@@ -10,7 +10,7 @@ public class MemberVO {
 	private String name;
 	private String email;
 	private Date joinDate;
-	
+	private String hobby;
 	
 	public MemberVO() {
 		System.out.println("MemberVO 생성자 호출");
@@ -55,7 +55,15 @@ public class MemberVO {
 	public void setJoinDate(Date joinDate) {
 		this.joinDate = joinDate;
 	}
-	
+
+	public String getHobby() {
+		return hobby;
+	}
+
+	public void setHobby(String hobby) {
+		this.hobby = hobby;
+	}
+
 	
 	
 }

@@ -48,12 +48,14 @@ public class MemberDAO {
 				String name = rs.getString("name");
 				String email = rs.getString("email");
 				Date joinDate = rs.getDate("joinDate");
+				String hobby = rs.getString("hobby");
 				MemberVO vo = new MemberVO();
 				vo.setId(id);
 				vo.setPwd(pwd);
 				vo.setName(name);
 				vo.setEmail(email);
 				vo.setJoinDate(joinDate);
+				vo.setHobby(hobby);
 				list.add(vo);
 			}
 			rs.close();
@@ -73,14 +75,16 @@ public class MemberDAO {
 			String pwd = memberVO.getPwd();
 			String name = memberVO.getName();
 			String email = memberVO.getEmail();
+			String hobby = memberVO.getHobby();
 			String query = "insert into t_member";
-			query += " (id, pwd, name, email)";
-			query += " values(?, ?, ?, ?)";
+			query += " (id, pwd, name, email, hobby)";
+			query += " values(?, ?, ?, ?, ?)";
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, id);
 			pstmt.setString(2, pwd);
 			pstmt.setString(3, name);
 			pstmt.setString(4, email);
+			pstmt.setString(5, hobby);
 			pstmt.executeUpdate();
 			pstmt.close();
 			con.close();
