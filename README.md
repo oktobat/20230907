@@ -1,5 +1,7 @@
 ## context.xml 파일에 </context> 바로 위에 아래 코드 추가
+```
 <ResourceLink global="jdbc/test" name="jdbc/test" type="javax.sql.DataSource" />
+```
 
 ## server.xml 파일에  <Resource ~ /> 추가
 ```
