@@ -9,7 +9,7 @@
     <!-- Editable user database that can also be used by
          UserDatabaseRealm to authenticate users
     -->
-    <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="50" name="jdbc/test" password="1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/bookstore" username="root"/>
+    <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="50" name="jdbc/test" password="1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/book_store" username="root"/>
   </GlobalNamingResources>
 ```
 
