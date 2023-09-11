@@ -12,6 +12,10 @@
 ```
 
 ## 중요설정  
-프로젝트에 build path 설정 : servlet.api.jar (tomcat 폴더 > lib 폴더에 있음), mysql-connector-j-8.1.0.jar(java 폴더 > lib 폴더에 있음)
+프로젝트에 build path 설정 : 
+
+servlet.api.jar (tomcat 폴더 > lib 폴더에 있음),
+
+mysql-connector-j-8.1.0.jar(java 폴더 > lib 폴더에 있음)
 
 WEB-INF > lib : mysql-connector-j-8.1.0.jar, tomcat-dbcp-7.0.30.jar 붙여넣기
