@@ -33,6 +33,45 @@ public class MemberDAO {
 		}
 	}
 	
+	public List<MemberBean> oklistMembers(MemberBean mvo){
+		List<MemberBean> list = new ArrayList<MemberBean>();
+		String _name = mvo.getName();
+		try {
+			con = dataFactory.getConnection();
+			String query = "select * from t_member";
+			if (_name != null && _name.length() != 0) {
+				query += " where name=?";
+				pstmt = con.prepareStatement(query);
+				pstmt.setString(1, _name);
+			} else {
+				pstmt = con.prepareStatement(query);
+			}
+			ResultSet rs = pstmt.executeQuery();
+			while( rs.next() ) {
+				String id = rs.getString("id");
+				String pwd = rs.getString("pwd");
+				String name = rs.getString("name");
+				String email = rs.getString("email");
+				Date joinDate = rs.getDate("joinDate");
+				String hobby = rs.getString("hobby");
+				MemberBean vo = new MemberBean(id, pwd, name, email, joinDate, hobby);
+				vo.setId(id);
+				vo.setPwd(pwd);
+				vo.setName(name);
+				vo.setEmail(email);
+				vo.setJoinDate(joinDate);
+				vo.setHobby(hobby);
+				list.add(vo);
+			}
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} 
+		return list;
+	}
+	
 	
 	public List<MemberVO> listMembers(){
 		List<MemberVO> list = new ArrayList<MemberVO>();
