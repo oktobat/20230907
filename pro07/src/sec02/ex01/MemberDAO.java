@@ -55,12 +55,6 @@ public class MemberDAO {
 				Date joinDate = rs.getDate("joinDate");
 				String hobby = rs.getString("hobby");
 				MemberBean vo = new MemberBean(id, pwd, name, email, joinDate, hobby);
-				vo.setId(id);
-				vo.setPwd(pwd);
-				vo.setName(name);
-				vo.setEmail(email);
-				vo.setJoinDate(joinDate);
-				vo.setHobby(hobby);
 				list.add(vo);
 			}
 			rs.close();
@@ -73,8 +67,8 @@ public class MemberDAO {
 	}
 	
 	
-	public List<MemberVO> listMembers(){
-		List<MemberVO> list = new ArrayList<MemberVO>();
+	public List<MemberBean> listMembers(){
+		List<MemberBean> list = new ArrayList<>();
 		try {
 //			connDB();
 			con = dataFactory.getConnection();
@@ -88,13 +82,7 @@ public class MemberDAO {
 				String email = rs.getString("email");
 				Date joinDate = rs.getDate("joinDate");
 				String hobby = rs.getString("hobby");
-				MemberVO vo = new MemberVO();
-				vo.setId(id);
-				vo.setPwd(pwd);
-				vo.setName(name);
-				vo.setEmail(email);
-				vo.setJoinDate(joinDate);
-				vo.setHobby(hobby);
+				MemberBean vo = new MemberBean(id, pwd, name, email, joinDate, hobby);
 				list.add(vo);
 			}
 			rs.close();
@@ -106,7 +94,7 @@ public class MemberDAO {
 		return list;
 	}
 	
-	public void addMember(MemberVO memberVO) {
+	public void addMember(MemberBean memberVO) {
 		try { 
 //			connDB();
 			con = dataFactory.getConnection();

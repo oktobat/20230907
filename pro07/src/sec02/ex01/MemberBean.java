@@ -12,9 +12,6 @@ public class MemberBean {
 	private String hobby;
 	
 	public MemberBean() { }
-	public MemberBean(String name) {
-		this.name = name;
-	}
 	public MemberBean(String id, String pwd, String name, String email, Date joinDate, String hobby) { 
 		this.id = id;
 		this.pwd = pwd;

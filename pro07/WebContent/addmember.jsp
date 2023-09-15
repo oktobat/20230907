@@ -20,7 +20,8 @@
 	
 	<% 
 	    MemberDAO dao = new MemberDAO();
-		List<MemberBean> list = dao.oklistMembers(m);
+		dao.addMember(m);
+		List<MemberBean> list = dao.listMembers();
 	%>
 	
 	<table border="1" width="800" align="center">
