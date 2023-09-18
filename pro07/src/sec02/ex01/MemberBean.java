@@ -1,6 +1,6 @@
 package sec02.ex01;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class MemberBean {
 
