@@ -26,7 +26,7 @@
 		List<MemberBean> list = dao.listMembers();
 	%>
 	
-	<c:set var="members" value="<%=list %>" />
+	<!--  c:set var="members" value="<%=list %>" / -->
 	
 	<table border="1" width="800" align="center">
 		<tr align="center" bgcolor="ffff66">
@@ -37,14 +37,14 @@
 		   <th>가입일자</th>
 		   <th>취미</th>
 		</tr>
-		<c:forEach var="member" items="${members}">
+		<c:forEach var="i" begin="0" end="<% list.size(); %>" step="1">
 			<tr align="center">
-	       		<td>${member.id }</td>
-		        <td>${member.pwd }</td>
-		        <td>${member.name }</td>
-		        <td>${member.email }</td>
-		        <td>${member.joinDate }</td>
-		        <td>${member.hobby }</td>
+	       		<td>${list[i].id }</td>
+		        <td>${list[i].pwd }</td>
+		        <td>${list[i].name }</td>
+		        <td>${list[i].email }</td>
+		        <td>${list[i].joinDate }</td>
+		        <td>${list[i].hobby }</td>
      		</tr>
 		</c:forEach>
 	</table>
